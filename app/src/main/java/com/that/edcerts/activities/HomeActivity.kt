@@ -1,8 +1,10 @@
 package com.that.edcerts.activities
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
+import android.support.design.widget.Snackbar
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
@@ -82,4 +84,11 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
     }
+
+    companion object {
+        fun newIntent(context: Context?) : Intent {
+            return Intent(context, HomeActivity::class.java)
+        }
+    }
+
 }

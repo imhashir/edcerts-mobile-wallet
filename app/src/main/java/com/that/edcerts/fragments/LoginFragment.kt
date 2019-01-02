@@ -6,8 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.that.edcerts.R
-import com.that.edcerts.activities.LoginActivity
-
+import com.that.edcerts.activities.HomeActivity
 import kotlinx.android.synthetic.main.fragment_login.*
 
 class LoginFragment : Fragment() {
@@ -17,7 +16,7 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        buttonLogin.setOnClickListener { startActivity(LoginActivity.newIntent(context)) }
+        buttonLogin.setOnClickListener { startActivity(HomeActivity.newIntent(context)) }
     }
 
     companion object {
