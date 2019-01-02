@@ -8,4 +8,7 @@
     <string name="action_settings">Settings</string>
     <string name="head_passphrase">Passphrase</string>
     <string name="button_login">Login</string>
+    <string name="head_url">Invitation Url</string>
+    <string name="button_add">Add</string>
+    <string name="head_passcode">Passcode</string>
 </resources>
