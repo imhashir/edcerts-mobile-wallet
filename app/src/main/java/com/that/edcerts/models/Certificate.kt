@@ -7,6 +7,10 @@ class Certificate(name: String) : Parcelable {
 
     var certificateName: String = ""
 
+    init {
+        certificateName = name
+    }
+
     constructor(parcel: Parcel) : this(parcel.readString()) {
         certificateName = parcel.readString()
     }

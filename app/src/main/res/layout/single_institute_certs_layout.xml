@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/instituteTitle"
-    android:textSize="48sp"
-    android:textStyle="bold"
-    android:textColor="@android:color/black">
+    android:background="@drawable/rounded_outer_box"
+    android:layout_margin="10dp"
+    android:elevation="2dp">
 
-</TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/instituteTitle"
+        android:textSize="32sp"
+        android:padding="8dp"
+        android:textColor="@android:color/black"
+        android:clickable="false"/>
+
+</LinearLayout>
