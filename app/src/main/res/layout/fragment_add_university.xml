@@ -37,6 +37,6 @@
         android:layout_height="wrap_content"
         android:text="@string/button_add"
         android:textSize="24sp"
-        android:id="@+id/buttonCreateWallet"/>
+        android:id="@+id/buttonAddUniversity"/>
 
 </LinearLayout>

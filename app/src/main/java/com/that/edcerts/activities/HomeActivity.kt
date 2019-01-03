@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import com.that.edcerts.R
+import com.that.edcerts.fragments.AddUniversityFragment
 import com.that.edcerts.fragments.HomeFragment
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.app_bar_home.*
@@ -26,6 +27,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
+
+        fabAddUniversity.setOnClickListener { startActivity(AddUniversityActivity.newIntent(this)) }
 
         nav_view.setNavigationItemSelectedListener(this)
 
