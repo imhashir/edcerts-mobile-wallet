@@ -29,7 +29,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Create Wallet"
+        android:text="@string/button_sign_up"
         android:textSize="24sp"
         android:id="@+id/buttonCreateWallet"/>
 
