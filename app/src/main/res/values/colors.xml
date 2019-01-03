@@ -4,6 +4,13 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
+    <color name="colorPrimaryWhiteTheme">#F0F3F5</color>
+    <color name="colorWhiteThemeDark">#e9edef</color>
+    <color name="colorAccentWhiteTheme">#bfbfbf</color>
+
+    <color name="colorWhiteActionBarText">#2d2d2d</color>
+    <color name="colorWhiteActionBar">#FFFFFF</color>
+
     <color name="colorTextListCertificateTitle">#303030</color>
 
     <color name="colorTextCertificateIssuer">#303030</color>

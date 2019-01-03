@@ -27,7 +27,8 @@
 
         <activity
             android:name=".activities.CertificateActivity"
-            android:parentActivityName=".activities.HomeActivity">
+            android:parentActivityName=".activities.HomeActivity"
+            android:theme="@style/LightAppTheme">
 
         </activity>
 
