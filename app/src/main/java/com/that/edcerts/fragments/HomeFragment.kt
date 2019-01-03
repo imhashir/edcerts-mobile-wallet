@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.that.edcerts.R
+import com.that.edcerts.activities.CertificateActivity
 import com.that.edcerts.models.Certificate
 import com.that.edcerts.models.Institute
 import com.thoughtbot.expandablerecyclerview.ExpandableRecyclerViewAdapter
@@ -86,6 +87,8 @@ class HomeFragment : Fragment() {
 
         fun bindView(certificate: Certificate) = with(itemView) {
             itemView.certificateTitle.text = certificate.certificateName
+
+            itemView.setOnClickListener { startActivity(CertificateActivity.newIntent(context)) }
         }
     }
 }

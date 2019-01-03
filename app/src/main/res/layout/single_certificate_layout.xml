@@ -6,6 +6,6 @@
     android:id="@+id/certificateTitle"
     android:layout_marginLeft="20dp"
     android:textSize="28sp"
-    android:textColor="@color/colorTextCertificateTitle">
+    android:textColor="@color/colorTextListCertificateTitle">
 
 </TextView>
