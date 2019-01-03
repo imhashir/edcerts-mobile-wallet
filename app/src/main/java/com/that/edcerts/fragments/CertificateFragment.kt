@@ -1,8 +1,8 @@
 package com.that.edcerts.fragments
 
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment
+import android.support.v4.app.ShareCompat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +11,7 @@ import com.wangjie.rapidfloatingactionbutton.RapidFloatingActionHelper
 import com.wangjie.rapidfloatingactionbutton.contentimpl.labellist.RFACLabelItem
 import com.wangjie.rapidfloatingactionbutton.contentimpl.labellist.RapidFloatingActionContentLabelList
 import kotlinx.android.synthetic.main.fragment_certificate.*
+
 
 class CertificateFragment : Fragment(), RapidFloatingActionContentLabelList.OnRapidFloatingActionContentLabelListListener<Int> {
 
@@ -62,13 +63,29 @@ class CertificateFragment : Fragment(), RapidFloatingActionContentLabelList.OnRa
     }
 
     override fun onRFACItemIconClick(position: Int, item: RFACLabelItem<Int>?) {
-        Snackbar.make(view!!, "Option: " + position + " Clicked!", Snackbar.LENGTH_LONG).show()
+        when(position) {
+            0 -> { // Share
+                val shareIntent = ShareCompat.IntentBuilder.from(activity)
+                        .setChooserTitle("Share Certificate")
+                        .setType("text/plain")
+                        .setText("http://www.nu.edu.pk")
+                        .intent
+                if (shareIntent.resolveActivity(activity!!.packageManager) != null) {
+                    startActivity(shareIntent)
+                }
+            }
+            1 -> { // Verify
+
+            }
+            2 -> { // Info
+
+            }
+        }
         fabOptionsHelper!!.toggleContent()
     }
 
     override fun onRFACItemLabelClick(position: Int, item: RFACLabelItem<Int>?) {
-        Snackbar.make(view!!, "Option text: " + position + " Clicked!", Snackbar.LENGTH_LONG).show()
-        fabOptionsHelper!!.toggleContent()
+        onRFACItemIconClick(position, item)
     }
 
     companion object {

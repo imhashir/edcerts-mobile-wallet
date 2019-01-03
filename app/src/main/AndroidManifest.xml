@@ -28,7 +28,8 @@
         <activity
             android:name=".activities.CertificateActivity"
             android:parentActivityName=".activities.HomeActivity"
-            android:theme="@style/LightAppTheme">
+            android:theme="@style/LightAppTheme"
+            android:label="@string/activity_certificate">
 
         </activity>
 
