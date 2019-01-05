@@ -23,14 +23,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/button_login"
-        android:textSize="24sp"
+        style="@style/LightButton"
+        android:layout_margin="4dp"
         android:id="@+id/buttonLogin"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/button_sign_up"
-        android:textSize="24sp"
+        style="@style/DarkButton"
+        android:layout_margin="4dp"
         android:id="@+id/buttonCreateWallet"/>
 
 </LinearLayout>
