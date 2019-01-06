@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_vertical|center_horizontal"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:textColor="@color/colorPrimaryTextDark"
+        android:text="Your secret passphrase generated. Please save this now. You won't be able to see this or recover it again if you lose it"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="light hub rate upset taxi flight cake possible parade anchor develop crystal perfect resemble peasant ancient midnight sick sort era aim they mass pass"
+        style="@style/EditTextLight"
+        android:focusable="false"
+        android:layout_margin="4dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_proceed"
+        style="@style/DarkButton"
+        android:layout_margin="4dp"
+        android:id="@+id/buttonProceed"/>
+
+</LinearLayout>

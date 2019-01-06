@@ -26,6 +26,11 @@
         </activity>
 
         <activity
+            android:name=".activities.SignUpActivity"
+            android:label="Sign Up"
+            android:parentActivityName=".activities.LoginActivity"/>
+
+        <activity
             android:name=".activities.CertificateActivity"
             android:parentActivityName=".activities.HomeActivity"
             android:theme="@style/LightAppTheme"

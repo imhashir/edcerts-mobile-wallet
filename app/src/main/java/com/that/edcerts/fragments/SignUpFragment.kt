@@ -7,23 +7,21 @@ import android.view.View
 import android.view.ViewGroup
 import com.that.edcerts.R
 import com.that.edcerts.activities.HomeActivity
-import com.that.edcerts.activities.SignUpActivity
-import kotlinx.android.synthetic.main.fragment_login.*
+import kotlinx.android.synthetic.main.fragment_signup.*
 
-class LoginFragment : Fragment() {
+class SignUpFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_login, container, false)
+        return inflater.inflate(R.layout.fragment_signup, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        buttonLogin.setOnClickListener { startActivity(HomeActivity.newIntent(context)) }
-        buttonCreateWallet.setOnClickListener { startActivity(SignUpActivity.newIntent(context)) }
+        buttonProceed.setOnClickListener { startActivity(HomeActivity.newIntent(context)) }
     }
 
     companion object {
-        fun newInstance() : LoginFragment{
-            return LoginFragment()
+        fun newInstance() : SignUpFragment{
+            return SignUpFragment()
         }
     }
 }

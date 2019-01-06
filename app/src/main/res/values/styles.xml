@@ -25,6 +25,12 @@
         <item name="android:textSize">24sp</item>
     </style>
 
+    <style name="EditTextLight" parent="Base.V7.Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/background_edittext</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
     <style name="LightAppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimaryWhiteTheme</item>
