@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal|center_vertical">
+
+    <com.shuhart.stepview.StepView
+        android:id="@+id/verificationProgressSteps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        app:sv_steps="@array/verification_steps"
+        app:sv_selectedCircleColor="@color/colorPrimary"
+        app:sv_selectedTextColor="@color/colorPrimary"
+        app:sv_selectedCircleRadius="12dp"
+        app:sv_selectedStepNumberColor="@color/colorPrimaryWhiteTheme"
+        app:sv_stepLineWidth="1dp"
+        app:sv_stepPadding="4dp"
+        app:sv_nextTextColor="@color/colorAccent"
+        app:sv_nextStepLineColor="@color/colorAccent"
+        app:sv_doneCircleColor="@color/colorPrimary"
+        app:sv_doneStepLineColor="@color/colorPrimary"
+        app:sv_doneTextColor="@color/colorPrimary"
+        app:sv_doneCircleRadius="12dp"
+        app:sv_doneStepMarkColor="@color/colorPrimaryWhiteTheme"
+        app:sv_stepNumberTextSize="12sp"
+        app:sv_animationType="Line"/>
+
+    <Button
+        android:id="@+id/buttonDone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/DarkButton"
+        android:text="Done"
+        android:layout_margin="16dp"/>
+
+</LinearLayout>

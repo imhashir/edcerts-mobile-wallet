@@ -31,6 +31,11 @@
             android:parentActivityName=".activities.LoginActivity"/>
 
         <activity
+            android:name=".activities.VerifyCertificateActivity"
+            android:label="Certificate Verification"
+            android:parentActivityName=".activities.CertificateActivity"/>
+
+        <activity
             android:name=".activities.CertificateActivity"
             android:parentActivityName=".activities.HomeActivity"
             android:theme="@style/LightAppTheme"

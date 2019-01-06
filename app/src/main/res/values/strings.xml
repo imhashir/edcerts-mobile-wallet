@@ -16,4 +16,13 @@
     <string name="activity_certificate">Certificate</string>
     <string name="button_sign_up">Sign Up</string>
     <string name="button_proceed">Proceed</string>
+
+    <string-array name="verification_steps">
+        <item>Getting Transaction Metadata</item>
+        <item>Computing Hash of Degree</item>
+        <item>Comparing both Local and On-Chain Hash</item>
+        <item>Verify Issuer</item>
+        <item>Verify Issuer Revocation Status</item>
+        <item>Verified Successfully!</item>
+    </string-array>
 </resources>

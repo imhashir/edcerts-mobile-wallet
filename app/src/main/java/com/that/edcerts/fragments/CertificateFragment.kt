@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.that.edcerts.R
+import com.that.edcerts.activities.VerifyCertificateActivity
 import com.wangjie.rapidfloatingactionbutton.RapidFloatingActionHelper
 import com.wangjie.rapidfloatingactionbutton.contentimpl.labellist.RFACLabelItem
 import com.wangjie.rapidfloatingactionbutton.contentimpl.labellist.RapidFloatingActionContentLabelList
@@ -75,7 +76,7 @@ class CertificateFragment : Fragment(), RapidFloatingActionContentLabelList.OnRa
                 }
             }
             1 -> { // Verify
-
+                startActivity(VerifyCertificateActivity.newIntent(context))
             }
             2 -> { // Info
 
