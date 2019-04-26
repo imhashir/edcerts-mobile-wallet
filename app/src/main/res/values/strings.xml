@@ -2,8 +2,8 @@
     <string name="app_name">EdCerts</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">Android Studio Test</string>
+    <string name="nav_header_subtitle">public_key.android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="head_passphrase">Passphrase</string>
@@ -18,11 +18,11 @@
     <string name="button_proceed">Proceed</string>
 
     <string-array name="verification_steps">
-        <item>Getting Transaction Metadata</item>
-        <item>Computing Hash of Degree</item>
-        <item>Comparing both Local and On-Chain Hash</item>
-        <item>Verify Issuer</item>
-        <item>Verify Issuer Revocation Status</item>
-        <item>Verified Successfully!</item>
+        <item>Transaction\nMetadata</item>
+        <item>Computing\nHash</item>
+        <item>Comparing\nHash</item>
+        <item>Verify\nIssuer</item>
+        <item>Checking\nIssuer \nStatus</item>
+        <item>Verified\nSuccessfully!</item>
     </string-array>
 </resources>

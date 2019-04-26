@@ -2,33 +2,50 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="@drawable/bg"
     android:gravity="center_vertical|center_horizontal"
+    android:orientation="vertical"
     android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight=".25">
+
+        <ImageView
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/ic_svg_logo_icon_logo" />
+
+    </LinearLayout>
+
+
+    <EditText
+        style="@style/TextLight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:focusable="false"
+        android:text="light hub rate upset taxi flight cake possible parade anchor develop crystal perfect resemble peasant ancient midnight sick sort era aim they mass pass" />
+
+    <Button
+        android:id="@+id/buttonProceed"
+        style="@style/DarkButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:text="@string/button_proceed" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:textSize="16sp"
-        android:gravity="center"
-        android:textColor="@color/colorPrimaryTextDark"
-        android:text="Your secret passphrase generated. Please save this now. You won't be able to see this or recover it again if you lose it"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="light hub rate upset taxi flight cake possible parade anchor develop crystal perfect resemble peasant ancient midnight sick sort era aim they mass pass"
-        style="@style/EditTextLight"
-        android:focusable="false"
-        android:layout_margin="4dp"/>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/button_proceed"
-        style="@style/DarkButton"
-        android:layout_margin="4dp"
-        android:id="@+id/buttonProceed"/>
+        android:layout_weight=".1"
+        android:gravity="center_horizontal"
+        android:text="Your secret passphrase generated. Please save this now. You won't be able to see this or recover it again if you lose it"
+        android:textColor="@color/colorWhiteActionBar"
+        android:textSize="16sp" />
 
 </LinearLayout>

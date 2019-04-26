@@ -17,6 +17,7 @@
         </activity>
 
         <activity
+            android:theme="@style/AppTheme.NoActionBar"
             android:name=".activities.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -38,7 +39,7 @@
         <activity
             android:name=".activities.CertificateActivity"
             android:parentActivityName=".activities.HomeActivity"
-            android:theme="@style/LightAppTheme"
+            android:theme="@style/AppTheme"
             android:label="@string/activity_certificate">
 
         </activity>

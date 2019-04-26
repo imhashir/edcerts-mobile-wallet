@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimary">#4CCFC5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#4b67ff</color>
+    <color name="colorAccent">#FFFFFF</color>
 
     <color name="colorSuccessProgress">#62e648</color>
 
@@ -15,11 +15,12 @@
 
     <color name="colorRapidFabNormal">#2d2d2d</color>
     <color name="colorRapidFabPressed">#000000</color>
-    <color name="colorEditTextBack">#c4ccff</color>
+    <color name="colorEditTextBack">#1A4CCFC5</color>
     <color name="colorPrimaryTextDark">#181e43</color>
+    <color name="colorTextBack">#B3FFFFFF</color>
 
-    <color name="colorTextListCertificateTitle">#303030</color>
+    <color name="colorTextListCertificateTitle">#3C3F41</color>
 
-    <color name="colorTextCertificateIssuer">#303030</color>
+    <color name="colorTextCertificateIssuer">#F5ECEC</color>
 
 </resources>

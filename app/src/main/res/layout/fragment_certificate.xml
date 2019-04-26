@@ -3,10 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg"
     tools:context=".activities.HomeActivity">
 
-    <ScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -14,42 +14,44 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
             android:gravity="center_vertical|center_horizontal"
+            android:orientation="vertical"
             android:padding="16dp">
 
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
+                android:layout_marginVertical="16dp"
                 android:scaleType="fitCenter"
                 android:src="@drawable/test_logo_uni"
-                android:layout_marginVertical="16dp"/>
+                android:transitionName="cardImage" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="Certificate of Appreciation"
-                android:textSize="24sp"
-                android:gravity="center"
-                android:textColor="@android:color/black"/>
+                android:textColor="@android:color/white"
+                android:textSize="24sp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="National University of Computer and Emerging Sciences"
-                android:textSize="16sp"
-                android:layout_marginVertical="16dp"
                 android:layout_marginHorizontal="8dp"
+                android:layout_marginVertical="16dp"
                 android:gravity="center"
-                android:textColor="@color/colorTextCertificateIssuer"/>
+                android:text="National University of Computer and Emerging Sciences"
+                android:textColor="@color/colorTextCertificateIssuer"
+                android:textSize="16sp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="start"
                 android:text="@string/lorem_ipsum_text"
-                android:textSize="16sp"
-                android:gravity="center"
-                android:textColor="@color/colorTextCertificateIssuer"/>
+                android:textAlignment="gravity"
+                android:textColor="@color/colorTextCertificateIssuer"
+                android:textSize="16sp" />
 
         </LinearLayout>
     </ScrollView>
@@ -61,8 +63,7 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin">
 
-        <com.wangjie.rapidfloatingactionbutton.RapidFloatingActionButton
-            xmlns:rfab="http://schemas.android.com/apk/res-auto"
+        <com.wangjie.rapidfloatingactionbutton.RapidFloatingActionButton xmlns:rfab="http://schemas.android.com/apk/res-auto"
             android:id="@+id/fabCertificateOptions"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -71,10 +72,9 @@
             android:layout_marginRight="15dp"
             android:layout_marginBottom="15dp"
             android:padding="8dp"
-            rfab:rfab_color_normal="@color/colorRapidFabNormal"
-            rfab:rfab_color_pressed="@color/colorRapidFabPressed"
-            rfab:rfab_size="normal"
-            />
+            rfab:rfab_color_normal="@color/colorPrimary"
+            rfab:rfab_color_pressed="@color/colorWhiteActionBar"
+            rfab:rfab_size="normal" />
 
     </com.wangjie.rapidfloatingactionbutton.RapidFloatingActionLayout>
 

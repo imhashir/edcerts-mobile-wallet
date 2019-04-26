@@ -30,31 +30,30 @@ class CertificateFragment : Fragment(), RapidFloatingActionContentLabelList.OnRa
         items.add(RFACLabelItem<Int>()
                 .setLabel("Share")
                 .setResId(R.drawable.ic_share)
-                .setIconNormalColor(-0x27bceb)
-                .setIconPressedColor(-0x40c9f4)
-                .setLabelColor(-0x27bceb)
+                .setIconNormalColor(-0xFFCC44)
+                .setIconPressedColor(-0xffffff)
+                .setLabelColor(R.color.colorAccent)
                 .setWrapper(0)
         )
         items.add(RFACLabelItem<Int>()
                 .setLabel("Verify")
                 .setResId(R.drawable.ic_verify)
-                .setIconNormalColor(-0xb1cbd2)
-                .setIconPressedColor(-0xc1d8dd)
-                .setLabelColor(-0xb1cbd2)
+                .setIconNormalColor(-0xFFCC44)
+                .setIconPressedColor(R.color.colorAccent)
+                .setLabelColor(R.color.colorPrimary)
                 .setLabelSizeSp(14)
                 .setWrapper(1)
         )
         items.add(RFACLabelItem<Int>()
                 .setLabel("Info")
                 .setResId(R.drawable.ic_info)
-                .setIconNormalColor(-0xfa9100)
-                .setIconPressedColor(-0xf2acfe)
-                .setLabelColor(-0xfa9100)
+                .setIconNormalColor(-0xFFCC44)
+                .setIconPressedColor(R.color.colorAccent)
+                .setLabelColor(R.color.colorPrimary)
                 .setWrapper(2)
         )
         rfaContent
                 .setItems(items as List<RFACLabelItem<Any>>?)
-                .setIconShadowColor(-0x777778)
         fabOptionsHelper = RapidFloatingActionHelper(
                 context,
                 fabLayout,
@@ -64,7 +63,7 @@ class CertificateFragment : Fragment(), RapidFloatingActionContentLabelList.OnRa
     }
 
     override fun onRFACItemIconClick(position: Int, item: RFACLabelItem<Int>?) {
-        when(position) {
+        when (position) {
             0 -> { // Share
                 val shareIntent = ShareCompat.IntentBuilder.from(activity)
                         .setChooserTitle("Share Certificate")
@@ -90,7 +89,7 @@ class CertificateFragment : Fragment(), RapidFloatingActionContentLabelList.OnRa
     }
 
     companion object {
-        fun newInstance() : CertificateFragment{
+        fun newInstance(): CertificateFragment {
             return CertificateFragment()
         }
     }

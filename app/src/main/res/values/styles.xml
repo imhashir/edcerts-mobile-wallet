@@ -5,7 +5,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/colorWhiteActionBar</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -16,17 +16,24 @@
     <style name="DarkButton" parent="Base.TextAppearance.AppCompat.Button">
         <item name="android:background">@color/colorPrimary</item>
         <item name="android:textColor">@color/colorPrimaryWhiteTheme</item>
-        <item name="android:textSize">24sp</item>
+        <item name="android:textSize">14sp</item>
     </style>
 
     <style name="LightButton" parent="Base.TextAppearance.AppCompat.Button">
         <item name="android:background">@drawable/light_back_button</item>
         <item name="android:textColor">@color/colorPrimary</item>
-        <item name="android:textSize">24sp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:color">@color/colorWhiteActionBar</item>
     </style>
 
     <style name="EditTextLight" parent="Base.V7.Widget.AppCompat.EditText">
         <item name="android:background">@drawable/background_edittext</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="TextLight" parent="Base.V7.Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/background_text</item>
         <item name="android:padding">8dp</item>
         <item name="android:gravity">center</item>
     </style>
@@ -59,5 +66,36 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="TextLabel" parent="TextAppearance.AppCompat">
+        <item name="android:textColorHint">@color/colorWhiteActionBar</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorWhiteActionBar</item>
+        <item name="android:editTextColor">@color/colorTextBack</item>
+    </style>
+
+    <style name="editTextLabel" parent="TextAppearance.AppCompat">
+        <item name="android:background">@drawable/light_back_button</item>
+        <item name="android:textColorHint">@color/colorWhiteActionBar</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorWhiteActionBar</item>
+        <item name="android:editTextColor">@color/colorTextBack</item>
+        <item name="colorControlNormal">@color/colorPrimary</item>
+        <item name="colorControlActivated">@color/colorWhiteActionBar</item>
+        <item name="colorControlHighlight">@color/colorWhiteActionBar</item>
+    </style>
+
+
+    <style name="Widget.Design.TextInputLayout" parent="AppTheme">
+        <item name="hintTextAppearance">@style/AppTheme.TextFloatLabelAppearance</item>
+        <item name="counterTextAppearance">@style/TextAppearance.Design.Counter</item>
+        <item name="counterOverflowTextAppearance">@style/TextAppearance.Design.Counter.Overflow</item>
+    </style>
+
+    <style name="AppTheme.TextFloatLabelAppearance" parent="TextAppearance.Design.Hint">
+        <!-- Floating label appearance here -->
+        <item name="android:textColor">@color/colorWhiteActionBar</item>
+        <item name="android:textSize">14sp</item>
+    </style>
 
 </resources>

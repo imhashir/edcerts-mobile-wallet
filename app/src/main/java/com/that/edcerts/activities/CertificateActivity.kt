@@ -12,9 +12,8 @@ class CertificateActivity : SingleFragmentActivity() {
     }
 
     companion object {
-        fun newIntent(context: Context) : Intent {
+        fun newIntent(context: Context): Intent {
             return Intent(context, CertificateActivity::class.java)
         }
     }
-
 }

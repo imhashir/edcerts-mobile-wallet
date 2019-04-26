@@ -83,9 +83,10 @@
                         </option>
                         <option name="values">
                           <map>
+                            <entry key="assetSourceType" value="FILE" />
                             <entry key="color" value="ffffff" />
-                            <entry key="outputName" value="ic_share" />
-                            <entry key="sourceFile" value="C:\Users\Hashir" />
+                            <entry key="outputName" value="ic_svg_logo_icon_logo" />
+                            <entry key="sourceFile" value="C:\Users\home1\Desktop\Illustrator\edcerts\svg_logo_icon_logo.svg" />
                           </map>
                         </option>
                       </PersistentState>
