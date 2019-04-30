@@ -3,11 +3,13 @@ package com.that.edcerts.fragments
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import com.that.edcerts.activities.CertificateActivity
+import com.that.edcerts.controllers.CertificateController
 import com.that.edcerts.models.Certificate
 import com.that.edcerts.models.Institute
 import com.thoughtbot.expandablerecyclerview.ExpandableRecyclerViewAdapter
@@ -18,12 +20,13 @@ import com.thoughtbot.expandablerecyclerview.viewholders.GroupViewHolder
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.single_certificate_layout.view.*
 import kotlinx.android.synthetic.main.single_institute_certs_layout.view.*
-import java.util.*
+import org.json.JSONArray
+import org.json.JSONObject
 
 
 class HomeFragment : Fragment() {
 
-    open var holde: InstituteHolder? = null;
+    var mInstitutes = HashMap<String, Institute>()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(com.that.edcerts.R.layout.fragment_home, container, false)
@@ -32,30 +35,54 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var certificatesInst1: ArrayList<Certificate> = ArrayList<Certificate>()
-        certificatesInst1.add(Certificate("NU Certificate 1"))
-        certificatesInst1.add(Certificate("NU Certificate 2"))
-        certificatesInst1.add(Certificate("NU Certificate 3"))
-        certificatesInst1.add(Certificate("NU Certificate 4"))
+        var certificateController = CertificateController(context)
+        certificateController.fetchCertificates(object : CertificateController.OnCertificatesFetchedListener {
+            override fun onFetched(certificates: JSONArray) {
+                for (i in 0..(certificates.length() - 1)) {
+                    var instituteName: String = (certificates[i] as JSONObject?)!!["Institution"] as String
+                    if(!mInstitutes.containsKey(instituteName)){
+                        mInstitutes[instituteName] = Institute(title = instituteName, list = ArrayList())
+                    }
+                    (mInstitutes[instituteName])!!.add(certificates[i] as JSONObject)
 
-        var certificatesInst2: ArrayList<Certificate> = ArrayList<Certificate>()
-        certificatesInst2.add(Certificate("LUMS Certificate 1"))
-        certificatesInst2.add(Certificate("LUMS Certificate 2"))
-        certificatesInst2.add(Certificate("LUMS Certificate 3"))
-        certificatesInst2.add(Certificate("LUMS Certificate 4"))
+                    var institutesArrayList: ArrayList<Institute> = ArrayList()
+                    for(institute in mInstitutes.values) {
+                        institutesArrayList.add(institute)
+                    }
+                    instituteList.adapter = InstituteCertificateAdapter(institutesArrayList)
+                }
+            }
 
-        var nucesUni = Institute("NUCES", certificatesInst1)
-        var lumsUni = Institute("LUMS", certificatesInst2)
+            override fun onError(ex: String?) {
+                Log.wtf(TAG, ex)
+            }
+        })
 
-        var institutes: ArrayList<Institute> = ArrayList<Institute>()
-        institutes.add(nucesUni)
-        institutes.add(lumsUni)
-
-        instituteList.adapter = InstituteCertificateAdapter(institutes)
+//        var certificatesInst1: ArrayList<Certificate> = ArrayList()
+//        certificatesInst1.add(Certificate("NU Certificate 1"))
+//        certificatesInst1.add(Certificate("NU Certificate 2"))
+//        certificatesInst1.add(Certificate("NU Certificate 3"))
+//        certificatesInst1.add(Certificate("NU Certificate 4"))
+//
+//        var certificatesInst2: ArrayList<Certificate> = ArrayList()
+//        certificatesInst2.add(Certificate("LUMS Certificate 1"))
+//        certificatesInst2.add(Certificate("LUMS Certificate 2"))
+//        certificatesInst2.add(Certificate("LUMS Certificate 3"))
+//        certificatesInst2.add(Certificate("LUMS Certificate 4"))
+//
+//        var nucesUni = Institute("NUCES", certificatesInst1)
+//        var lumsUni = Institute("LUMS", certificatesInst2)
+//
+//        var institutes: ArrayList<Institute> = ArrayList()
+//        institutes.add(nucesUni)
+//        institutes.add(lumsUni)
+//
+//        instituteList.adapter = InstituteCertificateAdapter(institutes)
         instituteList.layoutManager = LinearLayoutManager(context)
     }
 
     companion object {
+        val TAG = "HomeFragment"
         fun newInstance(): HomeFragment {
             return HomeFragment()
         }
