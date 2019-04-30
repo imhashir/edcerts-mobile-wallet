@@ -21,14 +21,34 @@ class AddUniversityFragment : Fragment() {
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        if(arguments != null) {
+            var url = (arguments!![KEY_HOST] as String) + arguments!![KEY_PATH] as String
+            invitationUrl.setText(url)
+        }
+
         buttonAddUniversity.setOnClickListener {
             startActivity(HomeActivity.newIntent(context))
         }
     }
 
     companion object {
+        private val TAG = "AddUniversityFragment"
+        private val KEY_PATH = "AddUniversityFragment.path"
+        private val KEY_HOST = "AddUniversityFragment.host"
+
+
         fun newInstance(): AddUniversityFragment {
             return AddUniversityFragment()
+        }
+
+        fun newInstance(path: String?, host: String?): AddUniversityFragment {
+            var fragment = AddUniversityFragment()
+            var bundle = Bundle()
+            bundle.putString(KEY_PATH, path)
+            bundle.putString(KEY_HOST, host)
+            fragment.arguments = bundle
+            return fragment
         }
     }
 }

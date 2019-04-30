@@ -4,12 +4,17 @@ import android.content.Context
 import android.content.Intent
 import android.support.v4.app.Fragment
 import com.that.edcerts.fragments.AddUniversityFragment
-import com.that.edcerts.fragments.LoginFragment
 
 class AddUniversityActivity : SingleFragmentActivity() {
 
     override fun createFragment(): Fragment {
-        return AddUniversityFragment.newInstance()
+        return if(intent.data != null) {
+            var path = intent.data.path
+            var host = intent.data.host
+            AddUniversityFragment.newInstance(path, host)
+        } else{
+            AddUniversityFragment.newInstance()
+        }
     }
 
     companion object {
