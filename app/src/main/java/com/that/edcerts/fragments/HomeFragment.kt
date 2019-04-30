@@ -58,26 +58,6 @@ class HomeFragment : Fragment() {
             }
         })
 
-//        var certificatesInst1: ArrayList<Certificate> = ArrayList()
-//        certificatesInst1.add(Certificate("NU Certificate 1"))
-//        certificatesInst1.add(Certificate("NU Certificate 2"))
-//        certificatesInst1.add(Certificate("NU Certificate 3"))
-//        certificatesInst1.add(Certificate("NU Certificate 4"))
-//
-//        var certificatesInst2: ArrayList<Certificate> = ArrayList()
-//        certificatesInst2.add(Certificate("LUMS Certificate 1"))
-//        certificatesInst2.add(Certificate("LUMS Certificate 2"))
-//        certificatesInst2.add(Certificate("LUMS Certificate 3"))
-//        certificatesInst2.add(Certificate("LUMS Certificate 4"))
-//
-//        var nucesUni = Institute("NUCES", certificatesInst1)
-//        var lumsUni = Institute("LUMS", certificatesInst2)
-//
-//        var institutes: ArrayList<Institute> = ArrayList()
-//        institutes.add(nucesUni)
-//        institutes.add(lumsUni)
-//
-//        instituteList.adapter = InstituteCertificateAdapter(institutes)
         instituteList.layoutManager = LinearLayoutManager(context)
     }
 
