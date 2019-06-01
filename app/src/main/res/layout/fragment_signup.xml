@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
         android:focusable="false"
-        android:text="light hub rate upset taxi flight cake possible parade anchor develop crystal perfect resemble peasant ancient midnight sick sort era aim they mass pass" />
+        android:id="@+id/passphase" />
 
     <Button
         android:id="@+id/buttonProceed"
