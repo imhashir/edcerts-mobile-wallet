@@ -10,7 +10,7 @@
     <string name="button_login">Login</string>
     <string name="head_url">Invitation Url</string>
     <string name="button_add">Add</string>
-    <string name="head_passcode">Passcode</string>
+    <string name="head_email">Email</string>
     
     <string name="lorem_ipsum_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</string>
     <string name="activity_certificate">Certificate</string>

@@ -33,10 +33,10 @@
         android:paddingTop="4dp">
 
         <EditText
-            android:id="@+id/edittext_passcode"
+            android:id="@+id/edittext_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/head_passcode"
+            android:hint="@string/head_email"
             android:textColor="@color/colorWhiteActionBar" />
 
     </com.google.android.material.textfield.TextInputLayout>
