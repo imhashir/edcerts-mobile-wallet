@@ -4,9 +4,9 @@ import android.content.Context
 import android.content.Intent
 import android.os.AsyncTask
 import android.os.Build
-import android.support.constraint.ConstraintSet
-import android.support.v4.app.Fragment
 import android.transition.TransitionManager
+import androidx.constraintlayout.widget.ConstraintSet
+import androidx.fragment.app.Fragment
 import com.that.edcerts.fragments.LoginFragment
 import kotlinx.android.synthetic.main.fragment_login.*
 import java.lang.Thread.sleep

@@ -3,14 +3,14 @@ package com.that.edcerts.fragments
 import android.annotation.TargetApi
 import android.os.Build
 import android.os.Bundle
-import android.support.annotation.RequiresApi
-import android.support.constraint.ConstraintSet
-import android.support.v4.app.Fragment
 import android.transition.ChangeBounds
 import android.transition.TransitionManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
+import androidx.constraintlayout.widget.ConstraintSet
+import androidx.fragment.app.Fragment
 import com.that.edcerts.R
 import com.that.edcerts.activities.HomeActivity
 import com.that.edcerts.activities.SignUpActivity

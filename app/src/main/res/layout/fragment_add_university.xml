@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:padding="24dp">
 
-    <android.support.design.widget.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/url_layout"
         style="@style/editTextLabel"
         android:layout_width="match_parent"
@@ -21,9 +21,9 @@
             android:hint="@string/head_url"
             android:textColor="@color/colorWhiteActionBar" />
 
-    </android.support.design.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <android.support.design.widget.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/passcode_layout"
         style="@style/editTextLabel"
         android:layout_width="match_parent"
@@ -39,7 +39,7 @@
             android:hint="@string/head_passcode"
             android:textColor="@color/colorWhiteActionBar" />
 
-    </android.support.design.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/buttonAddUniversity"
