@@ -18,7 +18,7 @@ class CertificateController(private val mContext: Context?) {
 
     fun fetchCertificates(listener: OnCertificatesFetchedListener) {
         mOnCertificatesFetchedListener = listener
-        val url = "https://edcert.herokuapp.com/GetCertificate/jkhkjhj"
+        val url = "https://edcert.herokuapp.com/GetDegrees/${WalletController().getCredentials(mContext!!).ecKeyPair.publicKey}"
 
         val arrayRequest = JsonArrayRequest(Request.Method.GET, url, null,
                 Response.Listener { response -> mOnCertificatesFetchedListener!!.onFetched(response) },

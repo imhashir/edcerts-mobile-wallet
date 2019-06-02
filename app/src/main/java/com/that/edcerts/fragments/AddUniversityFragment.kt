@@ -1,6 +1,7 @@
 package com.that.edcerts.fragments
 
 import android.annotation.TargetApi
+import android.os.AsyncTask
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -15,8 +16,8 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.that.edcerts.R
 import com.that.edcerts.activities.HomeActivity
+import com.that.edcerts.controllers.WalletController
 import kotlinx.android.synthetic.main.fragment_add_university.*
-import org.json.JSONObject
 
 class AddUniversityFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -28,35 +29,33 @@ class AddUniversityFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        var url = ""
         if(arguments != null) {
-            var url = (arguments!![KEY_HOST] as String) + arguments!![KEY_PATH] as String
+            url = (arguments!![KEY_HOST] as String) + arguments!![KEY_PATH] as String
             invitationUrl.setText(url)
         }
 
-        var inputObject = JSONObject()
-        try {
-            inputObject.put(":email", "ljdkjlksj")
-            inputObject.put(":pkey", "shfeiuruewiu")
-        } catch (ex: Exception) {
-
-        }
         buttonAddUniversity.setOnClickListener {
 
-            var pkey = "lslkdjsakdpodjfslkfsfj"
-            var url = "http://192.168.1.8:3000/UpdatePublicKey/f8dccfcf-b5e8-4aee-aed4-85c77b358448/${edittext_email.text}/${pkey}"
+            AsyncTask.execute {
+                var pkey = WalletController().getCredentials(context!!).ecKeyPair.publicKey
+                var url = "https://${url}/${edittext_email.text}/${pkey}"
 
-            var jsonObjectRequest = JsonObjectRequest(
-                    Request.Method.PATCH,
-                    url,
-                    inputObject,
-                    Response.Listener {
-                        startActivity(HomeActivity.newIntent(context))
-                    },
-                    Response.ErrorListener {
-                        Log.wtf(TAG, it)
-                    })
+                Log.i(TAG, url)
 
-            Volley.newRequestQueue(activity).add(jsonObjectRequest)
+                var jsonObjectRequest = JsonObjectRequest(
+                        Request.Method.PATCH,
+                        url,
+                        null,
+                        Response.Listener {
+                            startActivity(HomeActivity.newIntent(context))
+                        },
+                        Response.ErrorListener {
+                            Log.wtf(TAG, it)
+                        })
+
+                Volley.newRequestQueue(activity).add(jsonObjectRequest)
+            }
         }
     }
 
