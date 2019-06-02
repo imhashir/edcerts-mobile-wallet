@@ -4,7 +4,7 @@
     tools:showIn="navigation_view">
 
     <item
-        android:id="@+id/navs_copy"
+        android:id="@+id/nav_copy_pub_key"
         android:icon="@drawable/ic_content_copy"
         android:title="Copy Public Key" />
 
@@ -12,11 +12,11 @@
     <item android:title="Communicate">
         <menu>
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/nav_change_pass"
                 android:icon="@drawable/ic_phonelink_lock"
                 android:title="Change Password" />
             <item
-                android:id="@+id/nav_send"
+                android:id="@+id/nav_logout"
                 android:icon="@drawable/ic_logout"
                 android:title="Log Out" />
         </menu>

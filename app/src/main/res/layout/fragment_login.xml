@@ -54,6 +54,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/head_passphrase"
                 android:paddingTop="4sp"
+                android:inputType="text"
                 android:textColor="@color/colorWhiteActionBar" />
 
         </com.google.android.material.textfield.TextInputLayout>

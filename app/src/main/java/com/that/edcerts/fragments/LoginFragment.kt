@@ -5,6 +5,7 @@ import android.os.Build
 import android.os.Bundle
 import android.transition.ChangeBounds
 import android.transition.TransitionManager
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,6 +15,7 @@ import androidx.fragment.app.Fragment
 import com.that.edcerts.R
 import com.that.edcerts.activities.HomeActivity
 import com.that.edcerts.activities.SignUpActivity
+import com.that.edcerts.controllers.WalletController
 import kotlinx.android.synthetic.main.fragment_login.*
 
 class LoginFragment : Fragment() {
@@ -21,7 +23,10 @@ class LoginFragment : Fragment() {
     var set = true
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-
+        if(WalletController().isLoggedIn(context!!)) {
+            startActivity(HomeActivity.newIntent(context))
+            activity!!.finish()
+        }
         return inflater.inflate(R.layout.fragment_login_start, container, false)
     }
 
@@ -35,7 +40,14 @@ class LoginFragment : Fragment() {
         }
 
         buttonLogin.setOnClickListener {
+            var creds = WalletController().loginWallet(context!!, edittext_passphrase.text.trim().toString())
+
+            Log.i(TAG, "Wallet Address: " + creds.address)
+            Log.i(TAG, "Priv Key: " + creds.ecKeyPair.privateKey)
+            Log.i(TAG, "Pub Key: " + creds.ecKeyPair.publicKey)
+
             startActivity(HomeActivity.newIntent(context))
+            activity!!.finish()
         }
 
         buttonCreateWallet.setOnClickListener {
@@ -44,6 +56,7 @@ class LoginFragment : Fragment() {
     }
 
     companion object {
+        val TAG = "LoginFragment"
         fun newInstance(): LoginFragment {
             return LoginFragment()
         }

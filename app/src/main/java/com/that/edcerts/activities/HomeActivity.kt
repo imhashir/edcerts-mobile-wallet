@@ -10,6 +10,7 @@ import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationView
 import com.that.edcerts.R
+import com.that.edcerts.controllers.WalletController
 import com.that.edcerts.fragments.HomeFragment
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.app_bar_home.*
@@ -61,11 +62,13 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
         when (item.itemId) {
-            R.id.nav_share -> {
+            R.id.nav_change_pass -> {
 
             }
-            R.id.nav_send -> {
-
+            R.id.nav_logout -> {
+                WalletController().logout(this)
+                startActivity(LoginActivity.newIntent(this))
+                finishAffinity()
             }
         }
 

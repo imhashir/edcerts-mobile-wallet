@@ -23,8 +23,12 @@ class CertificateController(private val mContext: Context?) {
         val arrayRequest = JsonArrayRequest(Request.Method.GET, url, null,
                 Response.Listener { response -> mOnCertificatesFetchedListener!!.onFetched(response) },
                 Response.ErrorListener { error ->
-                    mOnCertificatesFetchedListener!!.onError(error.message)
-                    Log.i(TAG, error.message)
+                    if(error.networkResponse.statusCode == 404) {
+                        Log.i(TAG, "No record found")
+                    } else if (error.message != null) {
+                        mOnCertificatesFetchedListener!!.onError(error.message)
+                        Log.i(TAG, error.message)
+                    }
                 }
         )
 
