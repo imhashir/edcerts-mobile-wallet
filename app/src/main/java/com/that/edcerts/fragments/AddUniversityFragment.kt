@@ -1,7 +1,6 @@
 package com.that.edcerts.fragments
 
 import android.annotation.TargetApi
-import android.os.AsyncTask
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -12,7 +11,7 @@ import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import com.android.volley.Request
 import com.android.volley.Response
-import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.that.edcerts.R
 import com.that.edcerts.activities.HomeActivity
@@ -36,26 +35,22 @@ class AddUniversityFragment : Fragment() {
         }
 
         buttonAddUniversity.setOnClickListener {
+            var pkey = WalletController().getCredentials(context!!).ecKeyPair.publicKey
+            var url = "https://${url}/${edittext_email.text}/${pkey}"
 
-            AsyncTask.execute {
-                var pkey = WalletController().getCredentials(context!!).ecKeyPair.publicKey
-                var url = "https://${url}/${edittext_email.text}/${pkey}"
+            Log.i(TAG, url)
 
-                Log.i(TAG, url)
+            var jsonObjectRequest = StringRequest (
+                    Request.Method.PATCH,
+                    url,
+                    Response.Listener {
+                        startActivity(HomeActivity.newIntent(context))
+                    },
+                    Response.ErrorListener {
+                        Log.wtf(TAG, it)
+                    })
 
-                var jsonObjectRequest = JsonObjectRequest(
-                        Request.Method.PATCH,
-                        url,
-                        null,
-                        Response.Listener {
-                            startActivity(HomeActivity.newIntent(context))
-                        },
-                        Response.ErrorListener {
-                            Log.wtf(TAG, it)
-                        })
-
-                Volley.newRequestQueue(activity).add(jsonObjectRequest)
-            }
+            Volley.newRequestQueue(activity).add(jsonObjectRequest)
         }
     }
 

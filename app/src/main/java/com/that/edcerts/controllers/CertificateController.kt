@@ -18,12 +18,14 @@ class CertificateController(private val mContext: Context?) {
 
     fun fetchCertificates(listener: OnCertificatesFetchedListener) {
         mOnCertificatesFetchedListener = listener
+
         val url = "https://edcert.herokuapp.com/GetDegrees/${WalletController().getCredentials(mContext!!).ecKeyPair.publicKey}"
 
         val arrayRequest = JsonArrayRequest(Request.Method.GET, url, null,
                 Response.Listener { response -> mOnCertificatesFetchedListener!!.onFetched(response) },
                 Response.ErrorListener { error ->
-                    if(error.networkResponse.statusCode == 404) {
+                    mOnCertificatesFetchedListener!!.onError(error.toString())
+                    if(error.networkResponse !=null && error.networkResponse.statusCode == 404) {
                         Log.i(TAG, "No record found")
                     } else if (error.message != null) {
                         mOnCertificatesFetchedListener!!.onError(error.message)

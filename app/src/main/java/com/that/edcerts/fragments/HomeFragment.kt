@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.snackbar.Snackbar
 import com.that.edcerts.activities.CertificateActivity
 import com.that.edcerts.controllers.CertificateController
 import com.that.edcerts.models.Certificate
@@ -27,9 +28,11 @@ import org.json.JSONObject
 class HomeFragment : Fragment() {
 
     var mInstitutes = HashMap<String, Institute>()
+    var rootView: View? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(com.that.edcerts.R.layout.fragment_home, container, false)
+        rootView = inflater.inflate(com.that.edcerts.R.layout.fragment_home, container, false)
+        return rootView
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -54,6 +57,7 @@ class HomeFragment : Fragment() {
             }
 
             override fun onError(ex: String?) {
+                Snackbar.make(rootView!!, "No certificates issued yet!", Snackbar.LENGTH_LONG).show()
                 Log.wtf(TAG, ex)
             }
         })
